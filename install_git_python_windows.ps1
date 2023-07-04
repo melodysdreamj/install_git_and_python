@@ -1,4 +1,3 @@
-# 해당 함수 호출 시 최신 버전의 Python 정보 제공
 function Get-LatestPythonVersion() {
     $chocoPackages = choco list python --allversions --exact
     $choco310 = $chocoPackages | Select-String -Pattern 'python v3\.10\.'

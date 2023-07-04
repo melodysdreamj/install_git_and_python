@@ -38,17 +38,10 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 if (!(Get-Command git -ErrorAction SilentlyContinue)) {
     Write-Host 'Git not found. Installing...'
     choco install git -y
-    # 환경 변수 설정
-    $path = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
-    if (-not ($path -like "*C:\Program Files\Git\cmd*")) {
-        $path += ";C:\Program Files\Git\cmd"
-        [Environment]::SetEnvironmentVariable('Path', $path, [EnvironmentVariableTarget]::Machine)
-    }
     Write-Host 'Git installed.'
 } else {
     Write-Host 'Git is already installed.'
 }
-
 
 
 # 최신 Python 버전 가져오기

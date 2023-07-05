@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Check if the script is running as root
-if [ "$EUID" -eq 0 ]
-then
-    echo "Do not run this script as root."
-    exit
-fi
+# if [ "$EUID" -eq 0 ]
+# then
+#     echo "Do not run this script as root."
+#     exit
+# fi
 
 # Homebrew installation check and installation
 if ! command -v brew &> /dev/null
